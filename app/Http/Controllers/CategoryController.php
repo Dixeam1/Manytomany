@@ -64,9 +64,9 @@ class CategoryController extends Controller
      * @param  \App\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(category $category)
+    public function edit(category $category, $id)
     {
-        //
+        return view('admin/category/edit')->with('collection', category::find($id));
     }
 
     /**
@@ -78,7 +78,12 @@ class CategoryController extends Controller
      */
     public function update(Request $request, category $category)
     {
-        //
+        $res = category::find($request->id);
+        $res->name = $request->input('name');
+        $res->slug = str::slug($request->name);
+        $res->save();
+        $request->session()->flash('msg', 'Category Successfully updated!');
+        return redirect("category/show");
     }
 
     /**

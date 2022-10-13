@@ -12,11 +12,11 @@
                     {{session('message')}}
                 </div>
                 @endif
-                <form method="POST" action="{{url('admin/category')}}">
+                <form method="POST" action="../update/{{$collection->id}}">
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputEmail1" >Category Name</label>
-                        <input type="text" class="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Category Name">
+                        <input type="text" class="form-control" name="name" value="{{$collection->name}}" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Category Name">
                     </div>
                     
                     
