@@ -7,11 +7,7 @@
         </div>
         <div class="card-body">
             <div class=" mb-0">
-                @if (session('message'))
-                <div class="alert alert-success" role="alert">
-                    {{session('message')}}
-                </div>
-                @endif
+                
                 <form method="POST" action="{{url('admin/category')}}">
                     @csrf
                     <div class="form-group">

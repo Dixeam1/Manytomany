@@ -17,12 +17,18 @@
         
         <!-- Links -->
         <ul class="navbar-nav">
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a class="nav-link" href="{{url('admin/product/create')}}">Add Product</a>
-          </li>
+          </li> --}}
           <li class="nav-item">
             <a class="nav-link" href="{{url('category/create')}}">Add Category</a>
           </li>
+           {{-- <li class="nav-item">
+            <a class="nav-link" href="{{url('category/show')}}">Show Product</a>
+          </li> --}}
+          <li class="nav-item">
+            <a class="nav-link" href="{{url('category/show')}}">Show Category</a>
+          </li> 
         </ul>
       </nav>
     @yield('content')

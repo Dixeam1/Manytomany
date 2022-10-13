@@ -41,7 +41,7 @@ class CategoryController extends Controller
         $res->name = $request->input('name');
         $res->slug = str::slug($request->name);
         $res->save();
-        return redirect('category/create')->with('message', 'Category Added!');
+        return redirect('category/show')->with('message', 'Category Added!');
     }
 
     /**
@@ -82,8 +82,7 @@ class CategoryController extends Controller
         $res->name = $request->input('name');
         $res->slug = str::slug($request->name);
         $res->save();
-        $request->session()->flash('msg', 'Category Successfully updated!');
-        return redirect("category/show");
+        return redirect('category/show')->with('message', 'Category Updated');
     }
 
     /**

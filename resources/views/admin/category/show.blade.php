@@ -5,6 +5,11 @@
         <div class="card-header">
             CATEGORY
         </div>
+        @if (session('message'))
+                <div class="alert alert-success" role="alert">
+                    {{session('message')}}
+                </div>
+                @endif
         <div class="card-body">
             <div class=" mb-0">
                 <table class="table">
