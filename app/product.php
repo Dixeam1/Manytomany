@@ -15,4 +15,3 @@ class product extends Model
 
     ];
 }
-                                                                                                       

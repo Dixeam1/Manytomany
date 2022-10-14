@@ -25,3 +25,7 @@ Route::get('category/delete/{id}', 'CategoryController@destroy');
 Route::get('category/delete/{id}', 'CategoryController@destroy');
 Route::get('category/edit/{id}', 'CategoryController@edit');
 Route::post('category/update/{id}', 'CategoryController@update');
+// Product
+Route::get('product/create', 'ProductController@create');
+Route::post('product/create', 'ProductController@store');
+Route::get('admin/product', 'ProductController@show');
