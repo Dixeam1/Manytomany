@@ -42,7 +42,7 @@ class ProductController extends Controller
         $category = category::findOrFail($request->category_id)->first();
         $product = new product;
         $product->name = $request->name;
-        // $product->slug = str::slug($request->slug);
+        $product->slug = str::slug($request->slug);
         $product->price = $request->price;
         $product->category_id = $request->category_id;
         $product->save();
@@ -51,7 +51,7 @@ class ProductController extends Controller
         //     'slug' => str::slug($request->slug),
         //     'price' => $request->price,
         // ]);
-        return redirect('product/create')->with('message', 'Product Added');
+        return redirect('admin/product')->with('message', 'Product Added');
     }
 
     /**
@@ -97,8 +97,9 @@ class ProductController extends Controller
      * @param  \App\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(product $product)
+    public function destroy(product $product, $id)
     {
-        //
+        product::destroy(array('id', $id));
+        return redirect("admin/product");
     }
 }

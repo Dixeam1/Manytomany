@@ -29,14 +29,13 @@
                         @endphp
                         @foreach ($collection as $item)
                         <tr>
-                            <th scope="row">{{$i++}}</th>
+                            <th>{{$i++}}</th>
                             <td>{{$item->name}}</td>
-                            <td>{{$item->category_id}}</td>
+                            <td>{{$item->category->name}}</td>
                             <td>{{$item->price}}</td>
                             <td>
-                                <a href="delete/{{$item->id}}">Delete</a>
+                                <a href="product/delete/{{$item->id}}">Delete</a>
                                 <a class="ml-4" href="edit/{{$item->id}}">Edit</a>
-                                
                             </td>
                         </tr>    
                         @endforeach
@@ -45,7 +44,6 @@
             </div>
         </div>
     </div>
-    
     @endsection()
     
     
